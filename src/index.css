@@ -1,0 +1,106 @@
+:root {
+  /* dark mode setup */
+  --dark-mode-bg-color: #333;
+  --dark-mode-text-color: #f0f0f0;
+  --backgroundColor: var(--grey-50);
+  --textColor: var(--grey-900);
+
+  --darkModeTransition: color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out;
+}
+
+.dark-theme {
+  --textColor: var(--dark-mode-text-color);
+  --backgroundColor: var(--dark-mode-bg-color);
+}
+
+body {
+  transition: var(--darkModeTransition);
+  background: var(--backgroundColor);
+  color: var(--textColor);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --textColor: var(--dark-mode-text-color);
+    --backgroundColor: var(--dark-mode-bg-color);
+  }
+}
+
+/* Styling for Input Element */
+.inputContainer {
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 50vw 100px;
+  justify-content: center;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Styling for Button */
+
+.day-light {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: skyblue;
+  border: unset;
+  margin-left: auto;
+  margin-right: 5vw;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Additional styles for button hover and focus states */
+button:hover {
+  background-color: #2980b9;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.7);
+}
+
+.card {
+  width: 30%; /* Three columns on big screens */
+  margin: 1%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+  display: inline-block;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px; /* Rounded corners only at the top */
+}
+
+/* Responsive layout for smaller screens */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 48%; /* Two columns on small screens */
+  }
+}
+
+/* Responsive layout for mobile screens */
+@media screen and (max-width: 480px) {
+  .card {
+    width: 100%; /* One column on mobile screens */
+  }
+}
